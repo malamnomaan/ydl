@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}YarDeliver | User Profile{% endblock title %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title fw-semibold mb-4">My Organization</h5>
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="row">
+
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="userorg" class="form-label">Organization Name</label>
+                        <input name="userorg" type="text" class="form-control" id="userorg" aria-describedby="userorg" value="{{user.Organization.org_name}}" disabled>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="userdept" class="form-label">Department</label>
+                        <input name="userdept" type="text" class="form-control" id="userdept" aria-describedby="userdept" value="{{user.Department.dep_name}}" disabled>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="userfname" class="form-label">First Name</label>
+                        <input name="userfname" type="text" class="form-control" id="userfname" aria-describedby="userfname" value="{{user.usr_fname}}">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="userlname" class="form-label">Last Name</label>
+                        <input name="userlname" type="text" class="form-control" id="userlname" aria-describedby="userlname" value="{{user.usr_lname}}">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="useremail" class="form-label">Email</label>
+                        <input name="useremail" type="text" class="form-control" id="useremail" aria-describedby="useremail" value="{{user.usr_email}}" disabled>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+{% block js %}
+{% endblock js %}

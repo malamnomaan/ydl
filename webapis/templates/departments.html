@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}YarDeliver | All Departments{% endblock title %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title fw-semibold mb-4">Orgainzations</h5>
+      <div class="card">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead class="bg-primary text-light">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Contact Person</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Orgainzation</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for row in depts%}
+                  <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{row.dep_name}}</td>
+                    <td>{{row.dep_contact_person}}</td>
+                    <td>{{row.dep_phone}}</td>
+                    <td>{{row.dep_email}}</td>
+                    <td>{{row.Organization}}</td>
+                    <td>
+                      <button class="btn btn-sm btn-warning">Edit</button>
+                      <button class="btn btn-sm btn-danger">Disable</button>
+                  </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+{% block js %}
+{% endblock js %}

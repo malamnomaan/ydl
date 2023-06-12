@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}YarDeliver | All Departments{% endblock title %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <h5 class="card-title fw-semibold mb-4">User Management</h5>
+        {% if user.Role.id == 1 or user.Role.id == 2 %}
+          <button class="btn btn-sm btn-outline-primary">Create User</button>
+        {% endif %}
+      </div>
+      <div class="card">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead class="bg-primary text-light">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Orgainzation</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for row in users%}
+                  <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{row.usr_fname}}</td>
+                    <td>{{row.usr_lname}}</td>
+                    <td>{{row.usr_email}}</td>
+                    <td>{{row.usr_phone}}</td>
+                    <td>{{row.Organization.org_name}}</td>
+                    <td>{{row.Department.dep_name}}</td>
+                    <td>
+                      <button class="btn btn-sm btn-warning">Edit</button>
+                      <button class="btn btn-sm btn-danger">Disable</button>
+                  </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+{% block js %}
+{% endblock js %}

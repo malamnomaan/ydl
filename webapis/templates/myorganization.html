@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}YarDeliver | All Departments{% endblock title %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title fw-semibold mb-4">My Organization</h5>
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="userorg" class="form-label">Organization Name</label>
+                        <input name="userorg" type="text" class="form-control" id="userorg" aria-describedby="userorg" value="{{user.Organization.org_name}}" >
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="userorg" class="form-label">Contact Person</label>
+                        <input name="userorg" type="text" class="form-control" id="userorg" aria-describedby="userorg" value="{{user.Organization.org_contact_person}}" >
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="userorg" class="form-label">Contact Person</label>
+                        <textarea name="userorg" type="text" class="form-control" id="userorg" aria-describedby="userorg" >{{user.Organization.org_description}}</textarea>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="userorg" class="form-label">Contact Person Email</label>
+                        <input name="userorg" type="text" class="form-control" id="userorg" aria-describedby="userorg" value="{{user.Organization.org_email}}" >
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="userorg" class="form-label">Contact Person Phone</label>
+                        <input name="userorg" type="text" class="form-control" id="userorg" aria-describedby="userorg" value="{{user.Organization.org_phone}}" >
+                    </div>
+                </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+{% block js %}
+{% endblock js %}
